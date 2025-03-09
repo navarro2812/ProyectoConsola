@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir deploy
           xcopy /Y /I ProyectoConsola\bin\Release\* deploy\
-          powershell -Command "Compress-Archive -Path 'deploy\*' -DestinationPath 'Calculator.zip'"
+          powershell -Command "Compress-Archive -Path 'deploy\*' -DestinationPath 'Calculadora.zip'"
 
       # Paso de depuración: listar el contenido de la carpeta deploy
       - name: List deploy folder for debugging
