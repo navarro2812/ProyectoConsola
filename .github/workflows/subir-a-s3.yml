@@ -16,14 +16,21 @@ jobs:
 
       - name: Build Project
         run: |
-         & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" ProyectoConsola.sln /t:Rebuild /p:Configuration=Release
-
+          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" ProyectoConsola.sln /t:Rebuild /p:Configuration=Release
 
       - name: Package Project
         run: |
           mkdir deploy
           xcopy /Y /I bin\Release\* deploy\
-          powershell Compress-Archive -Path deploy\* -DestinationPath Calculator.zip
+          powershell -Command "Compress-Archive -Path 'deploy\*' -DestinationPath 'Calculator.zip'"
+
+      # Paso de depuración: listar el contenido de la carpeta deploy
+      - name: List deploy folder for debugging
+        run: dir deploy
+
+      # Paso de depuración: listar el contenido del directorio raíz
+      - name: List root folder for debugging
+        run: dir
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
