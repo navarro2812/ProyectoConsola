@@ -1,0 +1,40 @@
+name: Build, Package and Upload a S3
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Framework
+        # Este paso configura el entorno, aunque para .NET Framework se asume que el runner tiene instalado lo necesario
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '4.8.x'
+
+      - name: Build Project
+        run: msbuild ProyectoConsola.sln /t:Rebuild /p:Configuration=Release
+
+      - name: Package Project
+        run: |
+          mkdir deploy
+          xcopy /Y /I bin\Release\* deploy\
+          powershell Compress-Archive -Path deploy\* -DestinationPath Calculator.zip
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Upload Artifact to S3
+        run: aws s3 cp Calculator.zip s3://calculadora-bucket-app/Calculator.zip
