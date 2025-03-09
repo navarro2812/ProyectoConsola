@@ -1,0 +1,7 @@
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\bin\Debug\ProyectoConsola.exe.config
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\bin\Debug\ProyectoConsola.exe
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\bin\Debug\ProyectoConsola.pdb
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\obj\Debug\ProyectoConsola.csproj.AssemblyReference.cache
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\obj\Debug\ProyectoConsola.csproj.CoreCompileInputs.cache
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\obj\Debug\ProyectoConsola.exe
+D:\Examen para el Trabajo\Proyecto\ProyectoConsola\ProyectoConsola\obj\Debug\ProyectoConsola.pdb
