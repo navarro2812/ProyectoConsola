@@ -40,4 +40,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Upload Artifact to S3
-        run: aws s3 cp Calculator.zip s3://calculadora-bucket-app/Calculator.zip
+        run: aws s3 cp Calculator.zip s3://calculadora-bucket-app/Calculadora.zip
