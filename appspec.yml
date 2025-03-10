@@ -1,0 +1,10 @@
+  version: 0.0
+os: windows
+files:
+  - source: /
+    destination: C:\Deploy\CalculadoraApp
+hooks:
+  ApplicationStart:
+    - location: scripts\StartApp.bat
+      timeout: 300
+      runas: Administrator
