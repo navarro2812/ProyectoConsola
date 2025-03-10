@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir deploy
           xcopy /Y /I ProyectoConsola\bin\Release\* deploy\
+          copy appspec.yml deploy\
           powershell -Command "Compress-Archive -Path 'deploy\*' -DestinationPath 'Calculadora.zip'"
 
       # Paso de depuración: listar el contenido de la carpeta deploy
