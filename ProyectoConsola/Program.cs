@@ -10,7 +10,7 @@ namespace ProyectoConsola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Calculadora Básica prueba 2");
+            Console.WriteLine("Calculadora Básica prueba 8");
 
             // Solicitar el primer número
             Console.Write("Ingrese el primer número: ");
